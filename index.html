@@ -10,9 +10,9 @@
      ============================================================ -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>골드퀸 · 광고보다 기준, 생활·건강·경제를 고르는 큐레이터</title>
-<meta name="description" content="골드퀸이 직접 운영하는 채널 모음. 무료 사주·타로·꿈해몽 '달빛 한 스푼'과 생활픽스·행복한긍정씨·긍정예찬·긍정사랑 네이버 블로그를 한 곳에서.">
+<meta name="description" content="골드퀸이 직접 운영하는 채널 모음. 무료 사주·타로·꿈해몽 '달빛 한 스푼', 네이버 블로그 4곳, 네이버 크리에이터샵과 생활·살림 추천템 모음까지 한 곳에서.">
 <meta property="og:title" content="골드퀸 · Gold Queen">
-<meta property="og:description" content="광고보다 기준, 생활·건강·경제를 깐깐하게 고르는 큐레이터. 무료 사주·타로 앱과 블로그 4곳을 한 곳에 모았습니다.">
+<meta property="og:description" content="광고보다 기준, 생활·건강·경제를 깐깐하게 고르는 큐레이터. 무료 사주·타로 앱, 블로그 4곳, 네이버 크리에이터샵과 추천템 모음을 한 곳에 모았습니다.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://link.gold-queen.com/">
 <meta property="og:locale" content="ko_KR">
@@ -168,6 +168,14 @@ h1,h2,p{margin:0}
 .desc{display:block;margin-top:6px;font-size:13.5px;line-height:1.62;color:var(--ink2);letter-spacing:-.01em}
 .chev{flex:0 0 auto;width:16px;height:16px;color:#B49B78;margin:0 0 0 1px}
 
+/* ---------- shop cards ---------- */
+.card.shop{background:linear-gradient(150deg,#FFFDF8 0%,#FBF2E1 100%);border-color:rgba(185,138,62,.26)}
+.card.shop .ic{background:linear-gradient(160deg,#F4E4C6,#E9D0A2);border-color:rgba(185,138,62,.3);color:#8A6626}
+.disclosure{
+  margin:11px 3px 0;font-size:11.5px;line-height:1.7;color:#8C8175;
+  letter-spacing:-.01em;text-align:center;
+}
+
 /* ---------- SNS slots (비어 있으면 숨김) ---------- */
 .sns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .sns a{
@@ -309,6 +317,35 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1
       </a>
     </div>
 
+    <div class="sec">
+      <h2>Shop</h2>
+      <span class="sub">기준에 맞는 것만 골랐습니다 · 2곳</span>
+    </div>
+
+    <div class="list" id="shopList">
+      <a class="card shop" data-sh="cshop" href="https://cshop.naver.com/goldqueen" target="_blank" rel="noopener" aria-label="골드퀸 네이버 크리에이터샵 새 창에서 열기">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.4 8.3h11.2l.9 11.1a1.5 1.5 0 0 1-1.5 1.6H7a1.5 1.5 0 0 1-1.5-1.6z"/><path d="M9.1 8.3V6.6a2.9 2.9 0 0 1 5.8 0v1.7"/></svg></span>
+        <span class="body">
+          <span class="name"><span data-f="name">골드퀸 크리에이터샵</span><i class="nb" aria-hidden="true">N</i></span>
+          <span class="tags" data-f="tags">네이버 브랜드커넥트 · 생활픽스 연동</span>
+          <span class="desc" data-f="desc">광고보다 기준으로 고른 상품만 모았습니다. 네이버 안에서 바로 확인하고 구매합니다.</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="card shop" data-sh="inpock" href="https://link.inpock.co.kr/tryorcry" target="_blank" rel="noopener" aria-label="인포크링크 추천템 모음 새 창에서 열기">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.2" y="9.4" width="15.6" height="10.6" rx="2"/><path d="M3.2 9.4h17.6M12 9.4v10.6"/><path d="M12 9.4C10.6 5.7 9 4.8 7.7 6c-1.2 1.2 1 3.4 4.3 3.4zm0 0c1.4-3.7 3-4.6 4.3-3.4 1.2 1.2-1 3.4-4.3 3.4z"/></svg></span>
+        <span class="body">
+          <span class="name"><span data-f="name">인포크링크 추천템 모음</span></span>
+          <span class="tags" data-f="tags">생활 · 살림 쿠팡 파트너스 베스트</span>
+          <span class="desc" data-f="desc">살림에 바로 쓰는 것들만 골라 담은 추천템 모음. 가격 비교하며 둘러보세요.</span>
+        </span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <p class="disclosure" id="disclosure">제휴 링크를 통한 구매 시 일정액의 수수료를 제공받습니다.</p>
+
     <!-- SNS 슬롯 : CONFIG.social 에 주소를 넣은 것만 나타납니다 (없으면 영역 자체가 사라짐) -->
     <div class="sns" id="sns" aria-label="소셜 채널" hidden></div>
 
@@ -332,6 +369,9 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1
     <p><a href="https://blog.naver.com/jiyn74">행복한긍정씨 — 경제·지원금·보험·부동산</a></p>
     <p><a href="https://blog.naver.com/2sunshines">긍정예찬 — 식단·여행·생활건강</a></p>
     <p><a href="https://blog.naver.com/000jinjin000">긍정사랑 — 질병·증상·건강정보</a></p>
+    <p><a href="https://cshop.naver.com/goldqueen">골드퀸 크리에이터샵 (네이버 브랜드커넥트)</a></p>
+    <p><a href="https://link.inpock.co.kr/tryorcry">인포크링크 추천템 모음 — 생활·살림 베스트</a></p>
+    <p style="font-size:12px;color:#8C8175">제휴 링크를 통한 구매 시 일정액의 수수료를 제공받습니다.</p>
   </div>
 </noscript>
 
@@ -376,6 +416,20 @@ var CONFIG = {
       tags: "질병 · 증상 · 건강정보",
       desc: "증상과 질병 이름을 쉽게 풀어 쓴 건강 노트. 병원 가기 전에 읽어보세요." }
   ],
+
+  /* 쇼핑·추천 링크 2곳 (순서 = 화면 순서) */
+  shop: [
+    { key: "cshop",  name: "골드퀸 크리에이터샵", url: "https://cshop.naver.com/goldqueen",
+      tags: "네이버 브랜드커넥트 · 생활픽스 연동",
+      desc: "광고보다 기준으로 고른 상품만 모았습니다. 네이버 안에서 바로 확인하고 구매합니다." },
+
+    { key: "inpock", name: "인포크링크 추천템 모음", url: "https://link.inpock.co.kr/tryorcry",
+      tags: "생활 · 살림 쿠팡 파트너스 베스트",
+      desc: "살림에 바로 쓰는 것들만 골라 담은 추천템 모음. 가격 비교하며 둘러보세요." }
+  ],
+
+  /* 제휴(공정위 대가성) 문구 — 쇼핑 섹션 아래에 표시 */
+  disclosure: "제휴 링크를 통한 구매 시 일정액의 수수료를 제공받습니다.",
 
   /* SNS 슬롯 — 주소를 넣으면 자동으로 나타납니다. 비어 있으면 숨김. */
   social: [
@@ -445,6 +499,29 @@ var CONFIG = {
     });
   }
 
+  /* 쇼핑 카드 : HTML 순서를 유지하면서 CONFIG 값만 덮어씀 */
+  function applyShop() {
+    var list = $("#shopList");
+    if (!list) return;
+    var cards = {};
+    [].forEach.call(list.querySelectorAll(".card"), function (c) { cards[c.getAttribute("data-sh")] = c; });
+
+    (CONFIG.shop || []).forEach(function (s) {
+      var c = cards[s.key];
+      if (!c) return;
+      if (s.url)  c.setAttribute("href", s.url);
+      if (s.name) {
+        c.querySelector('[data-f="name"]').textContent = s.name;
+        c.setAttribute("aria-label", s.name + " 새 창에서 열기");
+      }
+      if (s.tags) c.querySelector('[data-f="tags"]').textContent = s.tags;
+      if (s.desc) c.querySelector('[data-f="desc"]').textContent = s.desc;
+    });
+
+    var d = $("#disclosure");
+    if (d && CONFIG.disclosure) d.textContent = CONFIG.disclosure;
+  }
+
   /* SNS : 주소 있는 것만 */
   function applySocial() {
     var box = $("#sns");
@@ -484,6 +561,7 @@ var CONFIG = {
   function init() {
     applyFeatured();
     applyBlogs();
+    applyShop();
     applySocial();
     applyAds();
   }
