@@ -35,6 +35,7 @@
   --night1:#171A28; --night2:#282139; --night3:#3A2F49;
   --r:16px;
   --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Nanum Gothic",system-ui,sans-serif;
+  --font-serif:"Nanum Myeongjo","Noto Serif KR","Noto Serif CJK KR","AppleMyungjo","Apple SD Gothic Neo","Batang","바탕","Times New Roman",serif;
 }
 html{-webkit-text-size-adjust:100%}
 body{
@@ -78,48 +79,128 @@ h1,h2,p{margin:0}
 
 /* ---------- featured (달빛 한 스푼) ---------- */
 .featured{
-  display:block;position:relative;overflow:hidden;
-  border-radius:20px;padding:21px 19px 18px;
-  background:linear-gradient(152deg,var(--night1) 0%,var(--night2) 52%,var(--night3) 100%);
-  color:#F7F0E2;
+  display:block;position:relative;overflow:hidden;isolation:isolate;
+  border-radius:20px;padding:25px 20px 18px;
+  background:
+    radial-gradient(118% 74% at 50% -12%, rgba(150,127,201,.40) 0%, rgba(150,127,201,0) 62%),
+    radial-gradient(92% 62% at 86% 108%, rgba(78,64,114,.52) 0%, rgba(78,64,114,0) 66%),
+    linear-gradient(152deg,var(--night1) 0%,var(--night2) 52%,var(--night3) 100%);
+  color:#F7F0E2;text-align:center;
   box-shadow:0 10px 26px -14px rgba(23,26,40,.65),0 1px 0 rgba(255,255,255,.06) inset;
   border:1px solid rgba(214,174,108,.28);
   transition:transform .18s ease,box-shadow .18s ease;
 }
-.featured .stars{
-  position:absolute;inset:0;pointer-events:none;opacity:.55;
+/* 밤하늘 — 별빛 가루 + 반짝임 */
+.featured .sky{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.featured .sky .dust{position:absolute;inset:0}
+.featured .sky .dust-a{
+  opacity:.46;
   background-image:
-    radial-gradient(1.4px 1.4px at 84% 16%, #FFEBC0 50%, transparent 51%),
-    radial-gradient(1.1px 1.1px at 68% 9%, #fff 50%, transparent 51%),
-    radial-gradient(1.3px 1.3px at 93% 40%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 78% 62%, #E4D6FF 50%, transparent 51%),
-    radial-gradient(1.2px 1.2px at 90% 76%, #fff 50%, transparent 51%);
+    radial-gradient(1.3px 1.3px at 8% 12%, #FFEBC0 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 18% 27%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 27% 8%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 36% 34%, #E4D6FF 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 46% 15%, #fff 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 55% 31%, #FFEBC0 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 64% 10%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 73% 25%, #fff 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 82% 9%, #E4D6FF 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 91% 29%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 96% 47%, #FFEBC0 50%, transparent 51%),
+    radial-gradient(1px 1px at 11% 53%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 22% 69%, #fff 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 33% 87%, #E4D6FF 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 47% 75%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 58% 93%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 68% 63%, #FFEBC0 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 79% 85%, #fff 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 88% 67%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 5% 89%, #fff 50%, transparent 51%);
 }
-.f-top{display:flex;align-items:center;gap:10px;position:relative}
-.f-moon{width:26px;height:26px;color:#E6C275;flex:0 0 auto}
+.featured .sky .dust-b{
+  opacity:.5;
+  animation:gq-twinkle 5.4s ease-in-out infinite;
+  background-image:
+    radial-gradient(2px 2px at 6% 19%, #FFF4D6 50%, transparent 51%),
+    radial-gradient(1.8px 1.8px at 15% 41%, #fff 50%, transparent 51%),
+    radial-gradient(2.1px 2.1px at 25% 21%, #fff 50%, transparent 51%),
+    radial-gradient(1.8px 1.8px at 39% 7%, #FFEBC0 50%, transparent 51%),
+    radial-gradient(2px 2px at 52% 45%, #EADFFF 50%, transparent 51%),
+    radial-gradient(1.8px 1.8px at 61% 19%, #fff 50%, transparent 51%),
+    radial-gradient(2.1px 2.1px at 71% 41%, #FFF4D6 50%, transparent 51%),
+    radial-gradient(1.8px 1.8px at 84% 23%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 92% 59%, #fff 50%, transparent 51%),
+    radial-gradient(1.8px 1.8px at 44% 89%, #FFEBC0 50%, transparent 51%);
+}
+.featured .sky .spk{
+  position:absolute;display:block;background:#FFF3D2;opacity:.45;
+  filter:drop-shadow(0 0 4px rgba(255,235,192,.85));
+  clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);
+  animation:gq-spk 4.8s ease-in-out infinite;
+}
+.spk.s1{width:11px;height:11px;top:15px;right:24px;animation-delay:.2s}
+.spk.s2{width:7px;height:7px;top:74px;left:21px;animation-delay:1.5s}
+.spk.s3{width:9px;height:9px;top:33px;right:48px;animation-delay:2.6s}
+.spk.s4{width:6px;height:6px;bottom:76px;right:26px;animation-delay:3.4s}
+.spk.s5{width:7px;height:7px;bottom:22px;left:30px;animation-delay:1s}
+@keyframes gq-twinkle{0%,100%{opacity:.22}45%{opacity:.72}72%{opacity:.40}}
+@keyframes gq-spk{0%,100%{opacity:.18;transform:scale(.45)}42%{opacity:.98;transform:scale(1)}70%{opacity:.4;transform:scale(.72)}}
+@keyframes gq-glow{0%,100%{opacity:.7}50%{opacity:1}}
+.f-top{
+  position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;gap:9px;
+}
+.f-moon{
+  width:26px;height:26px;color:#EBCB86;flex:0 0 auto;
+  filter:drop-shadow(0 0 6px rgba(235,203,134,.55));
+  animation:gq-glow 6.2s ease-in-out infinite;
+}
+.f-top .f-star{
+  width:11px;height:11px;flex:0 0 auto;color:#E6C275;
+  filter:drop-shadow(0 0 5px rgba(230,194,117,.6));
+  animation:gq-glow 5s ease-in-out infinite;
+}
 .f-eyebrow{
-  font-size:10.5px;font-weight:600;letter-spacing:.2em;color:#D9BE8C;
-  text-transform:uppercase;
+  font-size:10.5px;font-weight:600;letter-spacing:.2em;color:#E3C793;
+  text-transform:uppercase;text-shadow:0 0 10px rgba(227,199,147,.35);
 }
 .f-name{
-  position:relative;margin-top:11px;
-  font-size:23px;font-weight:700;letter-spacing:-.025em;color:#FFF8EA;
+  position:relative;z-index:1;margin-top:12px;
+  font-family:var(--font-serif);
+  font-size:26px;font-weight:700;letter-spacing:.005em;line-height:1.4;color:#FFF8EA;
+  text-shadow:0 1px 16px rgba(235,203,134,.30);
 }
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .f-name{
+    background-image:linear-gradient(178deg,#FFFDF6 0%,#F8E7BE 42%,#E3BE7C 76%,#D8B275 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+    text-shadow:none;
+  }
+}
+.f-sub{
+  position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;gap:8px;margin-top:9px;
+}
+.f-sub i{display:block;height:1px;width:26px;background:linear-gradient(90deg,rgba(214,174,108,0),rgba(214,174,108,.55),rgba(214,174,108,0))}
+.f-sub svg{width:8px;height:8px;color:#D6AE6C;opacity:.85}
 .f-desc{
-  position:relative;margin-top:8px;font-size:14px;line-height:1.72;
-  color:#CFC6D8;letter-spacing:-.01em;
+  position:relative;z-index:1;margin:11px auto 0;max-width:23.5em;
+  font-size:14px;line-height:1.75;color:#D2C9DE;letter-spacing:-.008em;
 }
 .f-tags{
-  position:relative;display:flex;flex-wrap:wrap;gap:6px;margin-top:13px;
+  position:relative;z-index:1;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:15px;
 }
 .f-tags span{
-  font-size:11.5px;color:#E3D3B4;padding:3px 9px;border-radius:99px;
+  font-size:11.5px;color:#E7D9BE;padding:3px 9px;border-radius:99px;
   border:1px solid rgba(214,174,108,.30);background:rgba(214,174,108,.09);
   letter-spacing:-.01em;
 }
 .f-cta{
-  position:relative;display:flex;align-items:center;justify-content:space-between;
-  margin-top:16px;padding-top:14px;border-top:1px solid rgba(214,174,108,.20);
+  position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin-top:17px;padding-top:14px;border-top:1px solid rgba(214,174,108,.20);
 }
 .f-cta b{
   font-size:14.5px;font-weight:600;color:#F0D59E;letter-spacing:-.02em;
@@ -207,7 +288,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1
   .featured:hover{transform:translateY(-1px);box-shadow:0 14px 30px -14px rgba(23,26,40,.7)}
   .sns a:hover{border-color:rgba(185,138,62,.36)}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media (max-width:359px){
   .wrap{padding:0 15px 30px}
   .brand{font-size:28px}
@@ -250,19 +331,29 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1
     <!-- 달빛 한 스푼 (하이라이트) -->
     <a class="featured" id="featured" data-key="featured"
        href="https://saju.gold-queen.com" target="_blank" rel="noopener"
-       aria-label="달빛 한 스푼 - 무료 사주·타로·꿈해몽·전생체험 바로 해보기">
-      <span class="stars" aria-hidden="true"></span>
+       aria-label="달빛 한 스푼 - 무료 사주·타로·꿈해몽·전생체험·로또 번호 바로 해보기">
+      <span class="sky" aria-hidden="true">
+        <span class="dust dust-a"></span>
+        <span class="dust dust-b"></span>
+        <i class="spk s1"></i><i class="spk s2"></i><i class="spk s3"></i><i class="spk s4"></i><i class="spk s5"></i>
+      </span>
       <div class="f-top">
         <svg class="f-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M20.2 14.9A8.6 8.6 0 0 1 9.1 3.8 8.7 8.7 0 1 0 20.2 14.9z"/>
           <path d="M17.4 4.2v3.2M15.8 5.8h3.2" stroke-width="1.3"/>
         </svg>
         <span class="f-eyebrow">하루를 여는 운세 한 스푼</span>
+        <svg class="f-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.8l1.5 7.4 7.4 1.5-7.4 1.5L12 19.6l-1.5-7.4L3.1 10.7l7.4-1.5z"/></svg>
       </div>
       <div class="f-name" data-f="name">달빛 한 스푼</div>
-      <p class="f-desc" data-f="desc">고민을 고르고 카드 세 장을 뽑아보세요. 오늘의 타로부터 만세력 사주, 꿈해몽, 재미로 보는 전생체험까지 — 가입 없이 바로.</p>
+      <div class="f-sub" aria-hidden="true">
+        <i></i>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></svg>
+        <i></i>
+      </div>
+      <p class="f-desc" data-f="desc">고민을 고르고 카드 세 장을 뽑아보세요. 오늘의 타로부터 만세력 사주, 꿈해몽, 전생체험, 행운의 로또 번호까지 한곳에서 만나보세요.</p>
       <div class="f-tags" data-f="tags">
-        <span>사주</span><span>타로</span><span>꿈해몽</span><span>전생체험</span>
+        <span>사주</span><span>타로</span><span>꿈해몽</span><span>전생체험</span><span>로또 번호</span>
       </div>
       <div class="f-cta">
         <b data-f="cta">무료로 바로 해보기</b>
@@ -364,7 +455,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1
 
 <noscript>
   <div style="max-width:460px;margin:0 auto;padding:0 20px 40px;font-family:sans-serif;line-height:2">
-    <p><a href="https://saju.gold-queen.com">달빛 한 스푼 (무료 사주·타로·꿈해몽·전생체험)</a></p>
+    <p><a href="https://saju.gold-queen.com">달빛 한 스푼 (무료 사주·타로·꿈해몽·전생체험·로또 번호)</a></p>
     <p><a href="https://blog.naver.com/mama2624">생활픽스 — 생활정보·살림·리뷰</a></p>
     <p><a href="https://blog.naver.com/jiyn74">행복한긍정씨 — 경제·지원금·보험·부동산</a></p>
     <p><a href="https://blog.naver.com/2sunshines">긍정예찬 — 식단·여행·생활건강</a></p>
@@ -392,8 +483,8 @@ var CONFIG = {
     key:  "featured",
     name: "달빛 한 스푼",
     url:  "https://saju.gold-queen.com",
-    desc: "고민을 고르고 카드 세 장을 뽑아보세요. 오늘의 타로부터 만세력 사주, 꿈해몽, 재미로 보는 전생체험까지 — 가입 없이 바로.",
-    tags: ["사주", "타로", "꿈해몽", "전생체험"],
+    desc: "고민을 고르고 카드 세 장을 뽑아보세요. 오늘의 타로부터 만세력 사주, 꿈해몽, 전생체험, 행운의 로또 번호까지 한곳에서 만나보세요.",
+    tags: ["사주", "타로", "꿈해몽", "전생체험", "로또 번호"],
     cta:  "무료로 바로 해보기",
     show: true
   },
