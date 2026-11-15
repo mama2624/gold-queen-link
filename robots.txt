@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://link.gold-queen.com/sitemap.xml
+
+#DaumWebMasterTool:48a2a6e4b76e8c122971fce0ffd91ab7c565cd854c0545c4e630fd2adde61fa6:CNSJIIGOISrSV2aL3hPlgQ==
