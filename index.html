@@ -32,7 +32,8 @@
   --ink:#2B2620; --ink2:#6C6257; --ink3:#8C8175;
   --gold:#B98A3E; --gold-l:#D6AE6C; --gold-soft:#EBD9B6; --gold-txt:#8A6626;
   --line:rgba(185,138,62,.20); --line2:rgba(185,138,62,.13);
-  --night1:#171A28; --night2:#282139; --night3:#3A2F49;
+  /* 칠흑 블랙 — 빛을 빨아들이는 달빛 카드 바탕 (#030306 ~ #000000) */
+  --night1:#030306; --night2:#010104; --night3:#000000;
   --r:16px;
   --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Nanum Gothic",system-ui,sans-serif;
   --font-serif:"Nanum Myeongjo","Noto Serif KR","Noto Serif CJK KR","AppleMyungjo","Apple SD Gothic Neo","Batang","바탕","Times New Roman",serif;
@@ -81,35 +82,36 @@ h1,h2,p{margin:0}
 .featured{
   display:block;position:relative;overflow:hidden;isolation:isolate;
   border-radius:20px;padding:25px 20px 18px;
-  background:
-    radial-gradient(118% 74% at 50% -12%, rgba(150,127,201,.40) 0%, rgba(150,127,201,0) 62%),
-    radial-gradient(92% 62% at 86% 108%, rgba(78,64,114,.52) 0%, rgba(78,64,114,0) 66%),
-    linear-gradient(152deg,var(--night1) 0%,var(--night2) 52%,var(--night3) 100%);
+  background-color:#000;
+  background-image:
+    radial-gradient(120% 68% at 50% -16%, rgba(233,198,126,.07) 0%, rgba(233,198,126,0) 56%),
+    radial-gradient(92% 56% at 50% 118%, rgba(233,198,126,.05) 0%, rgba(0,0,0,0) 64%),
+    linear-gradient(158deg,var(--night1) 0%,var(--night2) 48%,var(--night3) 100%);
   color:#F7F0E2;text-align:center;
-  box-shadow:0 10px 26px -14px rgba(23,26,40,.65),0 1px 0 rgba(255,255,255,.06) inset;
-  border:1px solid rgba(214,174,108,.28);
+  box-shadow:0 20px 38px -18px rgba(0,0,0,.88),0 2px 8px -5px rgba(0,0,0,.55),0 0 0 1px rgba(233,198,126,.10) inset;
+  border:1px solid rgba(233,198,126,.28);
   transition:transform .18s ease,box-shadow .18s ease;
 }
 /* 밤하늘 — 별빛 가루 + 반짝임 */
 .featured .sky{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .featured .sky .dust{position:absolute;inset:0}
 .featured .sky .dust-a{
-  opacity:.46;
+  opacity:.60;
   background-image:
     radial-gradient(1.3px 1.3px at 8% 12%, #FFEBC0 50%, transparent 51%),
     radial-gradient(1.1px 1.1px at 18% 27%, #fff 50%, transparent 51%),
     radial-gradient(1.2px 1.2px at 27% 8%, #fff 50%, transparent 51%),
-    radial-gradient(1px 1px at 36% 34%, #E4D6FF 50%, transparent 51%),
+    radial-gradient(1px 1px at 36% 34%, #FFE9C0 50%, transparent 51%),
     radial-gradient(1.3px 1.3px at 46% 15%, #fff 50%, transparent 51%),
     radial-gradient(1.1px 1.1px at 55% 31%, #FFEBC0 50%, transparent 51%),
     radial-gradient(1.2px 1.2px at 64% 10%, #fff 50%, transparent 51%),
     radial-gradient(1px 1px at 73% 25%, #fff 50%, transparent 51%),
-    radial-gradient(1.3px 1.3px at 82% 9%, #E4D6FF 50%, transparent 51%),
+    radial-gradient(1.3px 1.3px at 82% 9%, #FFE9C0 50%, transparent 51%),
     radial-gradient(1.1px 1.1px at 91% 29%, #fff 50%, transparent 51%),
     radial-gradient(1.2px 1.2px at 96% 47%, #FFEBC0 50%, transparent 51%),
     radial-gradient(1px 1px at 11% 53%, #fff 50%, transparent 51%),
     radial-gradient(1.2px 1.2px at 22% 69%, #fff 50%, transparent 51%),
-    radial-gradient(1.1px 1.1px at 33% 87%, #E4D6FF 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 33% 87%, #FFE9C0 50%, transparent 51%),
     radial-gradient(1.3px 1.3px at 47% 75%, #fff 50%, transparent 51%),
     radial-gradient(1px 1px at 58% 93%, #fff 50%, transparent 51%),
     radial-gradient(1.2px 1.2px at 68% 63%, #FFEBC0 50%, transparent 51%),
@@ -118,14 +120,14 @@ h1,h2,p{margin:0}
     radial-gradient(1px 1px at 5% 89%, #fff 50%, transparent 51%);
 }
 .featured .sky .dust-b{
-  opacity:.5;
+  opacity:.68;
   animation:gq-twinkle 5.4s ease-in-out infinite;
   background-image:
     radial-gradient(2px 2px at 6% 19%, #FFF4D6 50%, transparent 51%),
     radial-gradient(1.8px 1.8px at 15% 41%, #fff 50%, transparent 51%),
     radial-gradient(2.1px 2.1px at 25% 21%, #fff 50%, transparent 51%),
     radial-gradient(1.8px 1.8px at 39% 7%, #FFEBC0 50%, transparent 51%),
-    radial-gradient(2px 2px at 52% 45%, #EADFFF 50%, transparent 51%),
+    radial-gradient(2px 2px at 52% 45%, #FFF0CE 50%, transparent 51%),
     radial-gradient(1.8px 1.8px at 61% 19%, #fff 50%, transparent 51%),
     radial-gradient(2.1px 2.1px at 71% 41%, #FFF4D6 50%, transparent 51%),
     radial-gradient(1.8px 1.8px at 84% 23%, #fff 50%, transparent 51%),
@@ -133,7 +135,7 @@ h1,h2,p{margin:0}
     radial-gradient(1.8px 1.8px at 44% 89%, #FFEBC0 50%, transparent 51%);
 }
 .featured .sky .spk{
-  position:absolute;display:block;background:#FFF3D2;opacity:.45;
+  position:absolute;display:block;background:#FFF3D2;opacity:.58;
   filter:drop-shadow(0 0 4px rgba(255,235,192,.85));
   clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);
   animation:gq-spk 4.8s ease-in-out infinite;
@@ -172,7 +174,7 @@ h1,h2,p{margin:0}
 }
 @supports ((-webkit-background-clip:text) or (background-clip:text)){
   .f-name{
-    background-image:linear-gradient(178deg,#FFFDF6 0%,#F8E7BE 42%,#E3BE7C 76%,#D8B275 100%);
+    background-image:linear-gradient(178deg,#FFFEF9 0%,#FFF2CE 34%,#EBC97F 70%,#DDB778 100%);
     -webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;color:transparent;
     text-shadow:none;
@@ -186,7 +188,7 @@ h1,h2,p{margin:0}
 .f-sub svg{width:8px;height:8px;color:#D6AE6C;opacity:.85}
 .f-desc{
   position:relative;z-index:1;margin:11px auto 0;max-width:23.5em;
-  font-size:14px;line-height:1.75;color:#D2C9DE;letter-spacing:-.008em;
+  font-size:14px;line-height:1.75;color:#DCD3C2;letter-spacing:-.008em;
 }
 .f-tags{
   position:relative;z-index:1;
@@ -194,13 +196,13 @@ h1,h2,p{margin:0}
 }
 .f-tags span{
   font-size:11.5px;color:#E7D9BE;padding:3px 8.5px;border-radius:99px;
-  border:1px solid rgba(214,174,108,.30);background:rgba(214,174,108,.09);
+  border:1px solid rgba(233,198,126,.36);background:rgba(233,198,126,.10);
   letter-spacing:-.01em;
 }
 .f-cta{
   position:relative;z-index:1;
   display:flex;align-items:center;justify-content:center;gap:8px;
-  margin-top:17px;padding-top:14px;border-top:1px solid rgba(214,174,108,.20);
+  margin-top:17px;padding-top:14px;border-top:1px solid rgba(233,198,126,.22);
 }
 .f-cta b{
   font-size:14.5px;font-weight:600;color:#F0D59E;letter-spacing:-.02em;
@@ -285,7 +287,7 @@ h1,h2,p{margin:0}
 a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:14px}
 @media (hover:hover){
   .card:hover{border-color:rgba(185,138,62,.34);box-shadow:0 6px 18px -10px rgba(120,92,44,.5);transform:translateY(-1px)}
-  .featured:hover{transform:translateY(-1px);box-shadow:0 14px 30px -14px rgba(23,26,40,.7)}
+  .featured:hover{transform:translateY(-1px);box-shadow:0 24px 42px -18px rgba(0,0,0,.9),0 0 0 1px rgba(233,198,126,.10) inset}
   .sns a:hover{border-color:rgba(185,138,62,.36)}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
