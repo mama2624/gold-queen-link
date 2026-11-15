@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://link.gold-queen.com/sitemap.xml
