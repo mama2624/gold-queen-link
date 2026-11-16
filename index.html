@@ -10,10 +10,11 @@
      (HTML에 적힌 카드 값은 JS가 CONFIG 값으로 덮어씁니다)
      ============================================================ -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
 <title>골드퀸 · 광고보다 기준, 생활·건강·경제를 고르는 큐레이터</title>
-<meta name="description" content="골드퀸이 직접 운영하는 채널 모음. 무료 사주·타로·꿈해몽 '달빛 한 스푼', 네이버 블로그 4곳, 네이버 크리에이터샵과 생활·살림 추천템 모음까지 한 곳에서.">
+<meta name="description" content="골드퀸이 직접 운영하는 채널 모음. 무료 사주·타로·꿈해몽·2027 토정비결 '달빛 한 스푼', 네이버 블로그 4곳, 네이버 크리에이터샵과 생활·살림 추천템 모음까지 한 곳에서.">
 <meta property="og:title" content="골드퀸 · Gold Queen">
-<meta property="og:description" content="광고보다 기준, 생활·건강·경제를 깐깐하게 고르는 큐레이터. 무료 사주·타로 앱, 블로그 4곳, 네이버 크리에이터샵과 추천템 모음을 한 곳에 모았습니다.">
+<meta property="og:description" content="광고보다 기준, 생활·건강·경제를 깐깐하게 고르는 큐레이터. 무료 사주·타로·2027 토정비결 앱, 블로그 4곳, 네이버 크리에이터샵과 추천템 모음을 한 곳에 모았습니다.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://link.gold-queen.com/">
 <meta property="og:locale" content="ko_KR">
@@ -29,6 +30,7 @@
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
+  color-scheme:dark;
   --ivory:#FAF6EE; --ivory2:#FFFDF8;
   --ink:#2B2620; --ink2:#6C6257; --ink3:#8C8175;
   --gold:#B98A3E; --gold-l:#D6AE6C; --gold-soft:#EBD9B6; --gold-txt:#8A6626;
@@ -39,7 +41,7 @@
   --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Nanum Gothic",system-ui,sans-serif;
   --font-serif:"Nanum Myeongjo","Noto Serif KR","Noto Serif CJK KR","AppleMyungjo","Apple SD Gothic Neo","Batang","바탕","Times New Roman",serif;
 }
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;background:var(--ivory)}
 body{
   margin:0;padding:0;
   background:var(--ivory);
@@ -167,19 +169,15 @@ h1,h2,p{margin:0}
   font-size:10.5px;font-weight:600;letter-spacing:.2em;color:#E3C793;
   text-transform:uppercase;text-shadow:0 0 10px rgba(227,199,147,.35);
 }
+/* 2026-11-17 : 그라데이션 글자(background-clip:text) 제거 → 단색 아이보리·금빛 + 은은한 빛번짐
+   · 삼성 인터넷(다크모드)에서 그라데이션 글자가 배경에 먹혀 안 보이던 문제 해결 */
 .f-name{
   position:relative;z-index:1;margin-top:12px;
   font-family:var(--font-serif);
-  font-size:26px;font-weight:700;letter-spacing:.005em;line-height:1.4;color:#FFF8EA;
-  text-shadow:0 1px 16px rgba(235,203,134,.30);
-}
-@supports ((-webkit-background-clip:text) or (background-clip:text)){
-  .f-name{
-    background-image:linear-gradient(178deg,#FFFEF9 0%,#FFF2CE 34%,#EBC97F 70%,#DDB778 100%);
-    -webkit-background-clip:text;background-clip:text;
-    -webkit-text-fill-color:transparent;color:transparent;
-    text-shadow:none;
-  }
+  font-size:26px;font-weight:700;letter-spacing:.005em;line-height:1.4;
+  color:#FFF7E6;
+  text-shadow:0 1px 2px rgba(0,0,0,.55),0 0 1px rgba(255,255,255,.45),
+    0 0 16px rgba(246,227,180,.42),0 0 34px rgba(233,198,126,.24);
 }
 .f-sub{
   position:relative;z-index:1;
@@ -191,10 +189,13 @@ h1,h2,p{margin:0}
   position:relative;z-index:1;margin:11px auto 0;max-width:23.5em;
   font-size:14px;line-height:1.75;color:#DCD3C2;letter-spacing:-.008em;
 }
+/* 2026-11-17 : 알약 7개(사주·타로·꿈해몽·전생체험·궁합·로또 번호·2027 토정비결)
+   · 390px 에서 한 줄에 다 들어가지 않으므로 두 줄(4 + 3)로 균형 배치 */
 .f-tags{
   position:relative;z-index:1;
-  display:flex;flex-wrap:wrap;justify-content:center;gap:5px;margin-top:15px;
+  display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:15px;
 }
+.f-trow{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
 .f-tags span{
   font-size:11.5px;color:#E7D9BE;padding:3px 8.5px;border-radius:99px;
   border:1px solid rgba(233,198,126,.36);background:rgba(233,198,126,.10);
@@ -293,12 +294,14 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media (max-width:430px){
-  /* 알약 6개(사주·타로·꿈해몽·전생체험·궁합·로또 번호)가 한 줄에 오도록 (2026-11-15) */
-  .f-tags{gap:3.5px}
+  /* 알약 7개를 두 줄(4 + 3)로 : 줄 안 간격만 좁혀 균형 유지 (2026-11-17) */
+  .f-tags{gap:5px}
+  .f-trow{gap:4px}
   .f-tags span{font-size:11px;padding:3px 6.4px}
 }
 @media (max-width:374px){
-  .f-tags{gap:3px}
+  .f-tags{gap:4px}
+  .f-trow{gap:3.4px}
   .f-tags span{font-size:10.4px;padding:3px 5.4px;letter-spacing:-.015em}
 }
 @media (max-width:359px){
@@ -344,7 +347,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1
     <!-- 달빛 한 스푼 (하이라이트) -->
     <a class="featured" id="featured" data-key="featured"
        href="https://saju.gold-queen.com" target="_blank" rel="noopener"
-       aria-label="달빛 한 스푼 - 무료 사주·타로·꿈해몽·전생체험·사주 궁합·로또 번호 바로 해보기">
+       aria-label="달빛 한 스푼 - 무료 사주·타로·꿈해몽·전생체험·사주 궁합·로또 번호·2027 토정비결 바로 해보기">
       <span class="sky" aria-hidden="true">
         <span class="dust dust-a"></span>
         <span class="dust dust-b"></span>
@@ -366,7 +369,8 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1
       </div>
       <p class="f-desc" data-f="desc">오늘 나에게 건네는 작은 힌트 하나. 1분이면 내 흐름이 보입니다.</p>
       <div class="f-tags" data-f="tags">
-        <span>사주</span><span>타로</span><span>꿈해몽</span><span>전생체험</span><span>궁합</span><span>로또 번호</span>
+        <div class="f-trow"><span>사주</span><span>타로</span><span>꿈해몽</span><span>전생체험</span></div>
+        <div class="f-trow"><span>궁합</span><span>로또 번호</span><span>2027 토정비결</span></div>
       </div>
       <div class="f-cta">
         <b data-f="cta">무료로 바로 해보기</b>
@@ -468,7 +472,7 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:1
 
 <noscript>
   <div style="max-width:460px;margin:0 auto;padding:0 20px 40px;font-family:sans-serif;line-height:2">
-    <p><a href="https://saju.gold-queen.com">달빛 한 스푼 (무료 사주·타로·꿈해몽·전생체험·사주 궁합·로또 번호)</a></p>
+    <p><a href="https://saju.gold-queen.com">달빛 한 스푼 (무료 사주·타로·꿈해몽·전생체험·사주 궁합·로또 번호·2027 토정비결)</a></p>
     <p><a href="https://blog.naver.com/mama2624">생활픽스 — 생활정보·살림·리뷰</a></p>
     <p><a href="https://blog.naver.com/jiyn74">행복한긍정씨 — 경제·지원금·보험·부동산</a></p>
     <p><a href="https://blog.naver.com/2sunshines">긍정예찬 — 식단·여행·생활건강</a></p>
@@ -497,7 +501,7 @@ var CONFIG = {
     name: "달빛 한 스푼",
     url:  "https://saju.gold-queen.com",
     desc: "오늘 나에게 건네는 작은 힌트 하나. 1분이면 내 흐름이 보입니다.",
-    tags: ["사주", "타로", "꿈해몽", "전생체험", "궁합", "로또 번호"],
+    tags: ["사주", "타로", "꿈해몽", "전생체험", "궁합", "로또 번호", "2027 토정비결"],
     cta:  "무료로 바로 해보기",
     show: true
   },
@@ -579,7 +583,12 @@ var CONFIG = {
     if (f.url)  el.setAttribute("href", f.url);
     if (f.tags && f.tags.length) {
       var box = el.querySelector('[data-f="tags"]');
-      box.innerHTML = f.tags.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("");
+      var tags = f.tags.slice();
+      /* 6개 이하는 한 줄, 7개 이상은 두 줄로 반씩 나눠 균형 있게 (2026-11-17) */
+      var rows = tags.length > 6 ? [tags.slice(0, Math.ceil(tags.length / 2)), tags.slice(Math.ceil(tags.length / 2))] : [tags];
+      box.innerHTML = rows.map(function (row) {
+        return '<div class="f-trow">' + row.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + "</div>";
+      }).join("");
     }
   }
 
