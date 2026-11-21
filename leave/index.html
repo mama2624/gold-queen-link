@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>남은 연차수당 계산기 (2026) · 통상임금으로 3초 계산 | 골드퀸</title>
+<meta name="description" content="남은 연차 일수와 월 통상임금만 넣으면 연차수당(연차유급휴가 미사용수당)을 바로 계산합니다. 209시간 통상시급, 1일 통상임금, 세전·세후 예상액과 계산 공식까지 한 화면에. 2026년 근로기준법 기준.">
+<meta name="keywords" content="연차수당 계산기, 연차수당 계산, 미사용 연차수당, 통상임금 계산, 209시간, 연차수당 소멸시효, 반차 연차수당">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://link.gold-queen.com/leave/">
+<meta name="naver-site-verification" content="68f5a6f63d4a604d3558b7286e883ad5bb9188ba">
+<meta name="google-adsense-account" content="ca-pub-3479064308586347">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="골드퀸">
+<meta property="og:title" content="남은 연차수당 계산기 · 통상임금으로 바로 계산">
+<meta property="og:description" content="남은 연차 며칠, 얼마로 바뀌는지 3초 만에. 통상시급·1일 통상임금·세전 총액과 자주 틀리는 3가지를 함께 확인하세요.">
+<meta property="og:url" content="https://link.gold-queen.com/leave/">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="남은 연차수당 계산기">
+<meta name="twitter:description" content="남은 연차 며칠, 얼마로 바뀌는지 3초 만에 계산. 2026년 근로기준법 기준.">
+<meta name="theme-color" content="#FAF6EE">
+
+<!-- Google AdSense (골드퀸 · pub-3479064308586347) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3479064308586347" crossorigin="anonymous"></script>
+
+<!-- Google Analytics 4 : link.gold-queen.com · G-W5QVTMMRBY -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W5QVTMMRBY"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag("js", new Date());
+gtag("config", "G-W5QVTMMRBY");
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","@id":"https://link.gold-queen.com/leave/#app","name":"남은 연차수당 계산기","url":"https://link.gold-queen.com/leave/","applicationCategory":"FinanceApplication","applicationSubCategory":"급여·노무 계산","operatingSystem":"Web","inLanguage":"ko","isAccessibleForFree":true,"description":"월 통상임금과 남은 연차 일수를 넣으면 통상시급, 1일 통상임금, 연차유급휴가 미사용수당(세전·세후 예상)을 계산합니다. 근로기준법 제60조, 근로기준법 시행령 제6조 기준.","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"publisher":{"@type":"Organization","name":"골드퀸","url":"https://link.gold-queen.com/"}},
+{"@type":"FAQPage","@id":"https://link.gold-queen.com/leave/#faq","mainEntity":[
+{"@type":"Question","name":"연차수당은 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"연차수당 = 1일 통상임금 × 남은 연차 일수입니다. 1일 통상임금은 월 통상임금을 월 소정근로시간(주 40시간이면 209시간)으로 나눈 통상시급에 1일 소정근로시간 8시간을 곱해 구합니다."}},
+{"@type":"Question","name":"식대와 정기상여금도 통상임금에 들어가나요?","acceptedAnswer":{"@type":"Answer","text":"식대나 직무수당이 모든 근로자에게 매달 정해진 금액으로 지급되면 통상임금에 포함됩니다. 2024년 12월 19일 대법원 전원합의체 판결 이후에는 재직 조건이 붙은 정기상여금도 통상임금에 포함될 수 있어, 기본급만으로 계산하면 실제보다 적게 나옵니다."}},
+{"@type":"Question","name":"연차수당은 언제까지 받을 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"연차수당은 임금이어서 청구권이 생긴 날부터 3년이 지나면 소멸시효가 완성됩니다(근로기준법 제49조). 청구권은 연차 사용기간이 끝난 다음 날 생기므로, 그날부터 3년 안에 청구해야 받을 수 있습니다."}}
+]}
+]}
+</script>
+
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --ivory:#FAF6EE; --card:#FFFDF8; --card2:#F6EFE1;
+  --ink:#2B2620; --ink2:#6C6257; --ink3:#8C8175;
+  --gold:#B98A3E; --gold-d:#8A6626; --gold-l:#D6AE6C; --gold-soft:#EFE2C6;
+  --line:rgba(185,138,62,.22); --line2:rgba(185,138,62,.13);
+  --night:#1E1B16; --night2:#151310;
+  --warn:#A8562B; --ok:#3F6B4A;
+  --r:18px;
+  --font:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Nanum Gothic",system-ui,sans-serif;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; padding:0 0 56px; background:var(--ivory); color:var(--ink);
+  font-family:var(--font); font-size:16px; line-height:1.7;
+  word-break:keep-all; overflow-wrap:break-word;
+  background-image:radial-gradient(1200px 500px at 50% -180px, #FFF9EC 0%, rgba(255,249,236,0) 70%);
+}
+a{color:var(--gold-d); text-decoration:none; border-bottom:1px solid var(--line)}
+a:hover{border-bottom-color:var(--gold)}
+.wrap{max-width:720px; margin:0 auto; padding:0 18px}
+
+/* ── header ── */
+.top{padding:18px 0 6px; display:flex; align-items:center; justify-content:space-between; gap:12px}
+.top a.home{display:inline-flex; align-items:center; gap:7px; font-size:13px; color:var(--ink2); border:0}
+.top a.home svg{width:16px; height:16px}
+.top .mark{display:inline-flex; align-items:center; gap:6px; font-size:12.5px; letter-spacing:.14em; color:var(--gold-d); font-weight:600}
+.top .mark svg{width:17px; height:14px}
+
+.hd{padding:6px 0 22px}
+.eyebrow{display:inline-block; font-size:12.5px; letter-spacing:.06em; color:var(--gold-d); background:var(--gold-soft); border-radius:999px; padding:3px 11px; font-weight:600}
+h1{font-size:27px; line-height:1.32; margin:12px 0 8px; letter-spacing:-.02em; font-weight:800}
+h1 .sub{display:block; font-size:14px; font-weight:500; color:var(--ink2); letter-spacing:0; margin-top:9px; line-height:1.62}
+.hd p.lead{margin:0; font-size:14.5px; color:var(--ink2)}
+
+/* ── card ── */
+.card{background:var(--card); border:1px solid var(--line2); border-radius:var(--r); box-shadow:0 1px 0 #fff inset, 0 8px 26px -22px rgba(43,38,32,.5)}
+.pad{padding:20px 18px}
+@media(min-width:640px){ .pad{padding:24px} }
+
+/* ── form ── */
+.field{padding:14px 0; border-bottom:1px dashed var(--line2)}
+.field:last-of-type{border-bottom:0}
+.field > .lab{display:flex; align-items:center; gap:7px; margin-bottom:8px}
+.lab label, .lab .t{font-size:14.5px; font-weight:700; color:var(--ink); letter-spacing:-.01em}
+.lab .opt{font-size:11.5px; font-weight:600; color:var(--ink3); background:#F1EADB; border-radius:5px; padding:1px 6px}
+.inp{display:flex; align-items:center; gap:8px; background:#fff; border:1.5px solid var(--line); border-radius:12px; padding:0 12px; transition:border-color .15s, box-shadow .15s}
+.inp:focus-within{border-color:var(--gold); box-shadow:0 0 0 3px rgba(185,138,62,.14)}
+.inp input{flex:1; min-width:0; width:100%; border:0; outline:0; background:transparent; font-family:inherit; font-size:19px; font-weight:700; color:var(--ink); padding:12px 0; letter-spacing:-.01em}
+.inp input::placeholder{font-weight:500; color:#B9AF9F; font-size:17px}
+.inp .unit{font-size:13.5px; color:var(--ink2); font-weight:600; flex:none}
+.sub-in{font-size:12.5px; color:var(--ink3); margin:7px 0 0; line-height:1.5}
+.sub-in b{color:var(--gold-d); font-weight:700}
+.row2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+@media(max-width:420px){ .row2{grid-template-columns:1fr} }
+
+/* tooltip */
+details.tip{display:inline-block; position:relative; margin:0}
+details.tip summary{list-style:none; cursor:pointer; width:17px; height:17px; border-radius:50%; border:1px solid var(--line); color:var(--gold-d); font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; background:#fff; line-height:1}
+details.tip summary::-webkit-details-marker{display:none}
+details.tip[open] summary{background:var(--gold-soft)}
+details.tip .bub{position:absolute; z-index:9; left:-8px; top:26px; width:min(300px,88vw); background:#fff; border:1px solid var(--line); border-radius:12px; box-shadow:0 14px 34px -16px rgba(43,38,32,.4); padding:12px 13px; font-size:12.5px; line-height:1.62; color:var(--ink2); font-weight:500; word-break:keep-all}
+details.tip .bub b{color:var(--ink); font-weight:700}
+details.tip .bub ul{margin:6px 0 0; padding-left:16px}
+details.tip .bub li{margin:3px 0}
+
+/* advanced */
+details.adv{margin-top:6px; border-top:1px dashed var(--line2); padding-top:12px}
+details.adv summary{cursor:pointer; font-size:13px; color:var(--ink2); font-weight:600; list-style:none}
+details.adv summary::-webkit-details-marker{display:none}
+details.adv summary::before{content:"＋ "; color:var(--gold)}
+details.adv[open] summary::before{content:"− "}
+.adv-body{padding-top:12px}
+.chk{display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink2); margin:10px 0 0; cursor:pointer}
+.chk input{width:17px; height:17px; accent-color:var(--gold); margin:0}
+.hint{font-size:12px; color:var(--ink3); margin:6px 0 0}
+
+/* button */
+.btn{display:flex; align-items:center; justify-content:center; gap:8px; width:100%; margin-top:18px; padding:16px; border:0; border-radius:14px; background:linear-gradient(180deg,#C99B4C,#A87A30); color:#FFF9EC; font-family:inherit; font-size:16.5px; font-weight:800; letter-spacing:-.01em; cursor:pointer; box-shadow:0 10px 22px -14px rgba(154,113,38,.85)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:18px; height:18px}
+
+/* ── result ── */
+.res{margin-top:18px; border-radius:var(--r); overflow:hidden; border:1px solid #0d0b09; background:radial-gradient(140% 120% at 50% -20%, #2C2721 0%, var(--night) 45%, var(--night2) 100%); color:#FBF3E2}
+.res .rin{padding:22px 18px}
+@media(min-width:640px){ .res .rin{padding:26px 24px} }
+.res .cap{font-size:12.5px; letter-spacing:.04em; color:#C4B393; font-weight:600; display:flex; align-items:center; justify-content:space-between; gap:10px}
+.res .cap .days{color:#E4C88B}
+.res .big{font-size:37px; font-weight:800; letter-spacing:-.03em; line-height:1.16; margin:10px 0 2px; color:#FFF6E1; font-variant-numeric:tabular-nums}
+.res .big .won{font-size:20px; font-weight:700; margin-left:3px; color:#E9D5A9}
+.res .before{font-size:12.5px; color:#B3A48A; margin:0}
+.res .grid3{display:grid; grid-template-columns:1fr 1fr; gap:1px; margin:18px 0 0; background:rgba(214,174,108,.16); border-radius:12px; overflow:hidden}
+@media(min-width:480px){ .res .grid3{grid-template-columns:1fr 1fr 1fr} }
+.res .cell{background:#221E19; padding:12px 13px}
+.res .cell .k{font-size:11.5px; color:#A99A80; font-weight:600; letter-spacing:.02em}
+.res .cell .v{font-size:16px; font-weight:800; color:#F7ECD6; margin-top:3px; font-variant-numeric:tabular-nums; letter-spacing:-.01em}
+.res .cell .v small{font-size:11px; font-weight:600; color:#B8A88D; margin-left:2px}
+
+/* net */
+.taxbox{margin-top:14px; border-top:1px solid rgba(214,174,108,.18); padding-top:14px}
+.taxbox .head{display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap}
+.taxbox .head .t{font-size:13px; color:#D9C6A2; font-weight:700}
+.taxbox select{appearance:none; -webkit-appearance:none; background:#221E19; color:#F7ECD6; border:1px solid rgba(214,174,108,.35); border-radius:9px; padding:7px 30px 7px 10px; font-family:inherit; font-size:12.5px; font-weight:600; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23E4C88B' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 10px center; background-size:11px}
+.taxbox .net{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-top:12px; flex-wrap:wrap}
+.taxbox .net .k{font-size:12.5px; color:#B3A48A; font-weight:600}
+.taxbox .net .v{font-size:23px; font-weight:800; color:#FFF6E1; font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.taxbox .net .v .d{font-size:12.5px; color:#B3A48A; font-weight:600; margin-left:8px}
+.taxbox .fine{font-size:11.5px; color:#9C8D74; line-height:1.6; margin:10px 0 0}
+.warn{margin-top:12px; background:rgba(168,86,43,.14); border:1px solid rgba(214,140,100,.35); color:#F0C4A6; border-radius:11px; padding:10px 12px; font-size:12.5px; line-height:1.6; font-weight:600}
+.warn[hidden]{display:none}
+
+/* formula */
+.formula{margin-top:18px}
+.formula h2{font-size:14px; margin:0 0 10px; color:var(--ink); font-weight:800; letter-spacing:-.01em; display:flex; align-items:center; gap:7px}
+.formula h2 svg{width:15px; height:15px; color:var(--gold)}
+ol.steps{list-style:none; margin:0; padding:0; counter-reset:s}
+ol.steps li{position:relative; padding:11px 0 11px 34px; border-bottom:1px solid var(--line2); font-size:13.5px; color:var(--ink2); line-height:1.68}
+ol.steps li:last-child{border-bottom:0}
+ol.steps li::before{counter-increment:s; content:counter(s); position:absolute; left:0; top:12px; width:21px; height:21px; border-radius:50%; background:var(--gold-soft); color:var(--gold-d); font-size:11.5px; font-weight:800; display:flex; align-items:center; justify-content:center}
+ol.steps li b{color:var(--ink); font-weight:700; font-variant-numeric:tabular-nums}
+ol.steps li .eq{display:block; color:var(--ink3); font-size:12px; margin-top:2px; font-variant-numeric:tabular-nums}
+ol.steps li.sum{color:var(--ink); font-weight:700}
+ol.steps li.sum b{color:var(--gold-d); font-size:15px}
+
+.copy{margin-top:12px; display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--line); color:var(--ink2); border-radius:10px; padding:8px 12px; font-family:inherit; font-size:12.5px; font-weight:700; cursor:pointer}
+.copy svg{width:14px; height:14px; color:var(--gold)}
+.copy.done{color:var(--ok); border-color:rgba(63,107,74,.4)}
+
+/* mistakes */
+h2.sec{font-size:19px; margin:36px 0 4px; letter-spacing:-.02em; font-weight:800}
+h2.sec + p.sd{margin:0 0 14px; font-size:13.5px; color:var(--ink2)}
+.mis{display:grid; gap:10px}
+.mis .m{background:var(--card); border:1px solid var(--line2); border-radius:14px; padding:15px 16px}
+.mis .m .n{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:800; color:var(--warn); letter-spacing:.04em}
+.mis .m h3{font-size:15.5px; margin:6px 0 5px; letter-spacing:-.01em; line-height:1.45; font-weight:800}
+.mis .m p{margin:0; font-size:13.5px; color:var(--ink2); line-height:1.7}
+.mis .m p b{color:var(--ink); font-weight:700}
+
+/* prose */
+.prose h2{font-size:19px; margin:34px 0 10px; letter-spacing:-.02em; font-weight:800}
+.prose h3{font-size:15.5px; margin:22px 0 6px; font-weight:800; letter-spacing:-.01em}
+.prose p{font-size:14.5px; color:#443C33; margin:0 0 12px; line-height:1.82}
+.prose li{font-size:14.5px; color:#443C33; margin:6px 0; line-height:1.78}
+.prose ul{padding-left:19px; margin:0 0 14px}
+.tbl{width:100%; border-collapse:collapse; font-size:13.5px; margin:4px 0 16px; background:var(--card); border-radius:12px; overflow:hidden}
+.tbl th,.tbl td{border:1px solid var(--line2); padding:9px 11px; text-align:left; vertical-align:top; line-height:1.6}
+.tbl th{background:var(--card2); font-weight:700; color:var(--ink); width:34%; font-size:13px}
+.tbl td{color:#4B4238}
+
+/* faq */
+details.faq{background:var(--card); border:1px solid var(--line2); border-radius:12px; padding:13px 15px; margin-bottom:8px}
+details.faq summary{cursor:pointer; font-size:14.5px; font-weight:700; color:var(--ink); list-style:none; display:flex; justify-content:space-between; gap:10px; letter-spacing:-.01em}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"＋"; color:var(--gold); font-weight:700; flex:none}
+details.faq[open] summary::after{content:"−"}
+details.faq p{margin:10px 0 0; font-size:13.5px; color:var(--ink2); line-height:1.75}
+
+/* sources / disclaimer */
+.src{margin-top:26px; background:var(--card2); border-radius:14px; padding:16px 16px 6px}
+.src h2{font-size:13.5px; margin:0 0 8px; color:var(--ink); font-weight:800}
+.src ul{margin:0 0 12px; padding-left:18px}
+.src li{font-size:12.5px; color:var(--ink2); margin:5px 0; line-height:1.6}
+.disc{margin-top:14px; font-size:12px; color:var(--ink3); line-height:1.72}
+footer.f{margin-top:30px; padding:22px 0 0; border-top:1px solid var(--line2); text-align:center; font-size:12px; color:var(--ink3); line-height:1.8}
+footer.f .mm{display:inline-flex; align-items:center; gap:6px; color:var(--gold-d); font-weight:700; letter-spacing:.1em; font-size:11.5px; margin-bottom:6px}
+footer.f svg{width:15px; height:12px}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="top">
+    <a class="home" href="https://link.gold-queen.com/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      골드퀸 홈
+    </a>
+    <span class="mark">
+      <svg viewBox="0 0 64 50" aria-hidden="true"><path d="M6 34 10.5 11.5 21 19.5 32 7.5 43 19.5 53.5 11.5 58 34z" fill="currentColor"/><path d="M6 37.5h52l-1.6 6.5H7.6z" fill="currentColor"/></svg>
+      GOLD QUEEN
+    </span>
+  </div>
+
+  <header class="hd">
+    <span class="eyebrow">급여·노무 계산기</span>
+    <h1>남은 연차수당 계산기
+      <span class="sub">남은 연차 며칠이 얼마로 바뀌는지, 통상임금 기준으로 바로 계산합니다.</span>
+    </h1>
+    <p class="lead">숫자 두 개만 넣으면 끝. 2026년 근로기준법·고용노동부 기준으로 계산합니다.</p>
+  </header>
+
+  <main>
+    <!-- ══════════ 입력 ══════════ -->
+    <section class="card pad" aria-label="계산 입력">
+      <form id="calc" novalidate autocomplete="off">
+
+        <div class="field">
+          <div class="lab">
+            <label for="base">월 기본급</label>
+          </div>
+          <div class="inp">
+            <input id="base" type="text" inputmode="numeric" value="2,800,000" aria-describedby="baseHelp">
+            <span class="unit">원</span>
+          </div>
+          <p class="sub-in" id="baseHelp">세전 금액으로 넣으세요. 예시 값이 채워져 있으니 내 숫자로 바꿔 보세요.</p>
+        </div>
+
+        <div class="field">
+          <div class="lab">
+            <label for="allow">매월 고정수당</label>
+            <span class="opt">선택</span>
+            <details class="tip">
+              <summary aria-label="통상임금에 들어가는 항목 보기">?</summary>
+              <div class="bub">
+                <b>통상임금에 들어가는 것</b>
+                <ul>
+                  <li>매달 정해진 금액으로 주는 <b>식대·직무수당·직책수당·근속수당·통근보조비</b></li>
+                  <li>재직 조건이 붙은 <b>정기상여금</b>(2024.12.19 대법원 전원합의체 판결)</li>
+                </ul>
+                <b style="display:block;margin-top:8px">빠지는 것</b>
+                <ul>
+                  <li>연장·야간·휴일근로수당, 실적에 따라 달라지는 성과급, 실비 변동이 큰 식대</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div class="inp">
+            <input id="allow" type="text" inputmode="numeric" value="200,000" placeholder="0">
+            <span class="unit">원</span>
+          </div>
+          <p class="sub-in">기본급만으로 계산하면 <b>수당이 10~30% 적게</b> 나옵니다.</p>
+        </div>
+
+        <div class="field">
+          <div class="lab">
+            <label for="weekHours">주 소정근로시간</label>
+            <details class="tip">
+              <summary aria-label="소정근로시간이란">?</summary>
+              <div class="bub">
+                일한 시간이 아니라 <b>회사와 일하기로 정한 시간</b>입니다. 근로계약서에 적힌 주 40시간이 기준이고, 주 4일제·단시간 근로자는 그 시간을 넣으세요. 월 소정근로시간은 자동으로 계산됩니다.
+              </div>
+            </details>
+          </div>
+          <div class="inp">
+            <input id="weekHours" type="number" inputmode="numeric" min="1" max="60" step="1" value="40">
+            <span class="unit">시간</span>
+          </div>
+          <p class="sub-in" id="hoursHelp">1일 소정근로 <b>8시간</b> · 월 소정근로 <b>209시간</b>으로 계산합니다.</p>
+        </div>
+
+        <div class="field">
+          <div class="lab">
+            <label for="days">남은 연차 일수</label>
+          </div>
+          <div class="inp">
+            <input id="days" type="number" inputmode="decimal" min="0" max="60" step="0.5" value="5">
+            <span class="unit">일</span>
+          </div>
+          <p class="sub-in">반차는 <b>0.5</b>로 넣으세요. 예: 3일 반 = 3.5</p>
+        </div>
+
+        <details class="adv">
+          <summary>고급 설정 · 정기상여금, 월 소정근로시간 직접 입력</summary>
+          <div class="adv-body">
+            <div class="field" style="padding-top:0">
+              <div class="lab">
+                <label for="bonus">정기상여금 (연간)</label>
+                <span class="opt">선택</span>
+              </div>
+              <div class="inp">
+                <input id="bonus" type="text" inputmode="numeric" placeholder="0">
+                <span class="unit">원</span>
+              </div>
+              <p class="sub-in">1년치 총액을 넣으면 12로 나눠 월 통상임금에 더합니다. 설·추석 상여처럼 정해진 상여가 해당됩니다.</p>
+            </div>
+
+            <label class="chk"><input id="ovr" type="checkbox"> 월 소정근로시간 직접 입력</label>
+            <div class="inp" style="margin-top:8px; opacity:.55" id="ovrBox">
+              <input id="monthHours" type="number" inputmode="numeric" min="1" max="400" step="1" value="209" disabled>
+              <span class="unit">시간</span>
+            </div>
+            <p class="hint">계산식 (주 소정근로 + 주휴) × 365 ÷ 7 ÷ 12. 주 40시간이면 208.6 → 209시간입니다. 회사가 208시간 등 다른 기준시간을 쓰면 여기서 바꾸세요.</p>
+          </div>
+        </details>
+
+        <button class="btn" type="submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M8 7h8M8 11h2M8 15h2M14 11h2v4h-2z"/></svg>
+          연차수당 계산하기
+        </button>
+      </form>
+    </section>
+
+    <!-- ══════════ 결과 ══════════ -->
+    <section class="res" id="res" aria-live="polite">
+      <div class="rin">
+        <div class="cap">
+          <span>예상 연차수당 · 세전</span>
+          <span class="days" id="rcap">5일</span>
+        </div>
+        <div class="big"><span id="rTotal">574,163</span><span class="won">원</span></div>
+        <p class="before" id="rBefore">월 통상임금 3,000,000원 기준</p>
+
+        <div class="grid3">
+          <div class="cell"><div class="k">통상시급</div><div class="v"><span id="rHourly">14,354</span><small>원</small></div></div>
+          <div class="cell"><div class="k">1일 통상임금</div><div class="v"><span id="rDaily">114,833</span><small>원</small></div></div>
+          <div class="cell"><div class="k">월 소정근로</div><div class="v"><span id="rMonthHours">209</span><small>시간</small></div></div>
+        </div>
+
+        <div class="taxbox">
+          <div class="head">
+            <span class="t">예상 실수령액 보기</span>
+            <select id="rate" aria-label="공제율 선택">
+              <option value="3.3">3.3% (프리랜서·사업소득 참고)</option>
+              <option value="9.4">9.4% (4대보험 근로자 부담 참고)</option>
+              <option value="0" selected>공제 없이 보기 (세전)</option>
+            </select>
+          </div>
+          <div class="net">
+            <span class="k" id="rDedLabel">공제 없음 · 세전 금액</span>
+            <span class="v"><span id="rNet">574,163</span>원<span class="d" id="rDed"></span></span>
+          </div>
+          <p class="fine">연차수당은 근로소득이라 급여에 합산해 소득세·지방소득세가 붙고, 4대보험료도 함께 오릅니다. 3.3%는 사업소득 원천징수율이라 근로자에게는 맞지 않는 숫자예요. 실제 공제액은 연봉·부양가족에 따라 달라지니 <b>참고용</b>으로만 보세요.</p>
+        </div>
+
+        <div class="warn" id="warn" hidden></div>
+      </div>
+    </section>
+
+    <!-- ══════════ 공식 ══════════ -->
+    <section class="formula" aria-label="계산 공식">
+      <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16M4 12h9M4 19h16"/><path d="M17 10.5 20 13l-3 2.5"/></svg>계산 공식, 한눈에</h2>
+      <ol class="steps" id="steps">
+        <li>월 통상임금 = 기본급 + 고정수당<b id="s1">3,000,000원</b></li>
+        <li>월 소정근로시간 = (주 40시간 + 주휴 8시간) × 365 ÷ 7 ÷ 12 = <b id="s2">209시간</b></li>
+        <li>통상시급 = 3,000,000 ÷ 209 = <b id="s3">14,354원</b></li>
+        <li>1일 통상임금 = 14,354 × 8시간 = <b id="s4">114,833원</b></li>
+        <li class="sum">연차수당 = 114,833 × 5일 = <b id="s5">574,163원</b></li>
+      </ol>
+      <p class="hint" style="margin-top:10px">원 단위에서 반올림해 표시해서, 1일 통상임금 × 일수와 1~3원 차이가 날 수 있습니다. 실제 금액은 급여 계산에서 원 단위로 정리됩니다.</p>
+      <button class="copy" type="button" id="copyBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 5.5A1.5 1.5 0 0 0 13.5 4h-8A1.5 1.5 0 0 0 4 5.5v8A1.5 1.5 0 0 0 5.5 15"/></svg>
+        <span>계산 결과 복사</span>
+      </button>
+    </section>
+
+    <!-- ══════════ 자주 틀리는 3가지 ══════════ -->
+    <h2 class="sec">이거 놓치면 그냥 손해입니다</h2>
+    <p class="sd">계산은 맞아도 아래 세 가지에서 금액이 갈립니다.</p>
+    <div class="mis">
+      <div class="m">
+        <span class="n">01 · 시간</span>
+        <h3>연차수당 청구권은 3년이면 사라집니다</h3>
+        <p>연차수당은 임금이라 <b>소멸시효가 3년</b>입니다(근로기준법 제49조). 청구권은 연차 사용기간이 끝난 <b>다음 날</b> 생기니, 2023년에 발생한 연차수당이라면 이미 시효가 끝났을 수 있어요. 받을 게 있다면 달력부터 확인하세요.</p>
+      </div>
+      <div class="m">
+        <span class="n">02 · 절차</span>
+        <h3>“연차 다 썼지?” 말로 한 촉진은 없는 셈입니다</h3>
+        <p>회사가 수당을 주지 않아도 되는 경우는 <b>근로기준법 제61조의 사용촉진을 서면으로 제대로</b> 했을 때뿐입니다. 1차 촉진(소멸 6개월 전부터 10일 이내)과 2차 통보(소멸 2개월 전까지)를 <b>서면</b>으로 해야 하고, 구두·메신저 촉구는 요건을 못 채운 것으로 봅니다. 절차가 어긋났다면 수당은 그대로 청구할 수 있습니다.</p>
+      </div>
+      <div class="m">
+        <span class="n">03 · 금액</span>
+        <h3>기본급만 넣고 계산하면 10~30% 적게 나옵니다</h3>
+        <p>통상임금은 기본급이 아니라 <b>매달 정해진 식대·직무수당·정기상여금까지 더한 금액</b>입니다. 2024년 12월 19일 대법원 전원합의체 판결로 재직 조건이 붙은 정기상여금도 통상임금에 들어가게 됐으니, 급여명세서에서 ‘매달 똑같이 나오는 항목’을 모두 찾아 넣어 보세요.</p>
+      </div>
+    </div>
+
+    <!-- ══════════ 해설 ══════════ -->
+    <div class="prose">
+      <h2>연차수당, 이렇게 계산합니다</h2>
+      <p>연차수당(정식 이름은 <b>연차유급휴가 미사용수당</b>)은 쓰지 못하고 사라진 연차 일수만큼 받는 돈입니다. 근로기준법 제60조 제5항은 연차 기간에 대해 “취업규칙 등에서 정하는 통상임금 또는 평균임금”을 지급하라고만 정하고, 취업규칙에 따로 정한 게 없으면 통상임금으로 계산하는 것이 원칙입니다. 그래서 실무 계산은 언제나 <b>1일 통상임금 × 남은 연차 일수</b>로 끝납니다.</p>
+
+      <h3>월 소정근로시간이 209시간인 이유</h3>
+      <p>주 40시간 근무자는 하루 8시간씩 5일, 여기에 주휴일 8시간이 붙어 1주 기준시간이 48시간입니다. 여기에 1년 평균 주 수(365÷7≈52.14)를 곱하고 12개월로 나누면 48 × 52.14 ÷ 12 ≈ <b>208.6시간</b>, 반올림해서 <b>209시간</b>이 됩니다. 최저임금 월 환산액도 같은 209시간을 쓰고, 고용노동부 상담(1350)도 월급을 209로 나눠 통상시급을 구하라고 안내합니다.</p>
+      <p>참고로 고용노동부의 <b>통상임금 노사지도 지침</b>은 같은 계산을 208.56시간으로 예시합니다. 209로 나누든 208.56으로 나누든 차이는 0.2% 수준이라, 회사가 어느 쪽을 쓰는지가 궁금하면 급여 담당자에게 한 번 확인해 두면 좋습니다.</p>
+
+      <h3>통상임금에 넣을 항목, 뺄 항목</h3>
+      <table class="tbl">
+        <tbody>
+          <tr><th>넣습니다</th><td>기본급, 매달 정액으로 주는 식대·직무수당·직책수당·근속수당·통근보조비, 정기상여금(연간 총액 ÷ 12)</td></tr>
+          <tr><th>뺍니다</th><td>연장·야간·휴일근로수당, 실적에 따라 달라지는 성과급, 실제 쓴 만큼 돌려주는 실비(변동 식대·출장비), 명절 선물 같은 복리후생</td></tr>
+        </tbody>
+      </table>
+      <p>판단이 애매한 수당은 고용노동부 고객상담센터(1350)에 항목 이름과 지급 방식을 그대로 말하고 물어보는 게 가장 빠릅니다. 상담은 무료입니다.</p>
+
+      <h3>지급 시점과 기준 임금</h3>
+      <p>연차수당은 연차 사용기간이 끝난 다음 날 청구권이 생기고, 보통 그달 임금 지급일에 함께 지급됩니다. 금액은 <b>휴가청구권이 있는 마지막 달의 통상임금</b>을 기준으로 잡습니다(고용노동부 근로개선정책과-4218, 2013.7.19). 퇴사로 정산하는 경우라면 근로기준법 제36조에 따라 <b>퇴직일부터 14일 이내</b>에 받아야 하고, 합의 없이 미루면 지연이자가 붙습니다.</p>
+
+      <h3>반차·반반차도 똑같이 계산됩니다</h3>
+      <p>남은 연차가 3.5일이라면 1일 통상임금의 3.5배입니다. 시간 단위로 쪼개 쓰는 연차는 2026년 11월 현재 취업규칙·노사 합의로 운영하는 것이고, <b>2027년 6월 10일</b>부터 개정 근로기준법이 시행되면 법으로 시간 단위 분할 청구가 가능해집니다. 그때부터는 회사가 연차 청구·사용을 이유로 불이익을 주면 과태료가 붙습니다.</p>
+
+      <h3>적용되지 않는 경우도 있습니다</h3>
+      <p>연차휴가 규정은 상시 5인 이상 사업장에 적용됩니다. 5인 미만 사업장이거나 4주 평균 주 소정근로시간이 15시간 미만인 초단시간 근로자라면 법정 연차가 생기지 않으니, 이 계산기는 참고용으로만 보세요.</p>
+
+      <h2>자주 묻는 질문</h2>
+      <details class="faq"><summary>퇴사하면 남은 연차수당은 언제 받나요?</summary><p>퇴직일부터 14일 이내에 마지막 급여와 함께 받는 것이 원칙입니다(근로기준법 제36조). 회사와 합의하면 기한을 늘릴 수 있지만, 회사가 일방적으로 미룰 수는 없습니다.</p></details>
+      <details class="faq"><summary>연차를 다음 해로 넘겨 쓸 수 있나요?</summary><p>법에 이월 규정은 없습니다. 회사와 근로자가 합의한 경우에만 가능하고, 합의 없이 넘어갔다면 원칙대로 수당으로 정산받아야 합니다.</p></details>
+      <details class="faq"><summary>회사가 수당을 안 주면 어떻게 하나요?</summary><p>먼저 급여명세서와 연차 사용 내역을 정리해 회사에 서면으로 청구하세요. 해결되지 않으면 사업장 관할 고용노동청에 임금체불로 진정할 수 있고, 소멸시효 3년 안이면 대한법률구조공단의 무료 법률구조도 이용할 수 있습니다.</p></details>
+      <details class="faq"><summary>이 계산 결과가 실제 지급액과 다를 수 있나요?</summary><p>네. 취업규칙이 평균임금 기준을 정했거나, 회사가 쓰는 월 기준시간이 208시간대이거나, 수당 구성이 다르면 금액이 달라집니다. 이 계산기는 통상임금·209시간 기준의 참고값입니다.</p></details>
+    </div>
+
+    <!-- ══════════ 출처·면책 ══════════ -->
+    <section class="src">
+      <h2>근거와 출처</h2>
+      <ul>
+        <li><a href="https://www.law.go.kr/법령/근로기준법" target="_blank" rel="noopener">국가법령정보센터 — 근로기준법</a> (제49조 소멸시효, 제60조 연차 유급휴가, 제61조 사용촉진, 제36조 금품 청산)</li>
+        <li><a href="https://www.law.go.kr/법령/근로기준법시행령" target="_blank" rel="noopener">국가법령정보센터 — 근로기준법 시행령</a> (제6조 통상임금의 산정)</li>
+        <li><a href="https://www.moel.go.kr/info/lawinfo/instruction/view.do?bbs_seq=20250200285" target="_blank" rel="noopener">고용노동부 — 개정 통상임금 노사지도 지침(2025.2.6.)</a></li>
+        <li><a href="https://1350.moel.go.kr/rtmview.do?id=1000322406" target="_blank" rel="noopener">고용노동부 고객상담센터 — 연차수당 산정 상담 사례</a></li>
+      </ul>
+      <p class="disc">이 페이지의 계산 결과는 2026년 11월 기준 법령과 일반적인 실무를 바탕으로 한 <b>참고값</b>입니다. 개별 사업장의 취업규칙, 단체협약, 임금 구성에 따라 실제 지급액이 달라질 수 있으며, 법적 판단을 대신하지 않습니다. 정확한 금액은 회사 급여 담당자나 고용노동부 고객상담센터(1350)에 확인하세요. 계산기는 브라우저 안에서만 동작하고 입력한 금액을 서버로 보내지 않습니다.</p>
+    </section>
+
+    <footer class="f">
+      <div class="mm">
+        <svg viewBox="0 0 64 50" aria-hidden="true"><path d="M6 34 10.5 11.5 21 19.5 32 7.5 43 19.5 53.5 11.5 58 34z" fill="currentColor"/><path d="M6 37.5h52l-1.6 6.5H7.6z" fill="currentColor"/></svg>
+        GOLD QUEEN
+      </div>
+      <div>© 2026 골드퀸 · 남은 연차수당 계산기<br>
+      <a href="https://link.gold-queen.com/">골드퀸 채널 모음</a> · <a href="https://blog.naver.com/jiyn74" target="_blank" rel="noopener">행복한긍정씨</a></div>
+    </footer>
+  </div>
+
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var WEEK_DAYS = 365 / 7 / 12;
+
+  function toNum(v){
+    if (v === null || v === undefined) return 0;
+    var s = String(v).replace(/[^0-9.]/g, "");
+    if (s === "" || s === ".") return 0;
+    var n = parseFloat(s);
+    return isFinite(n) ? n : 0;
+  }
+  function won(n){ return Math.round(n).toLocaleString("ko-KR"); }
+  function money(n){ return won(n) + "원"; }
+
+  function fmtMoneyField(el){
+    var n = toNum(el.value);
+    if (el.value.trim() === "") { el.value = ""; return; }
+    el.value = Math.round(n).toLocaleString("ko-KR");
+  }
+
+  var els = {
+    base: $("base"), allow: $("allow"), bonus: $("bonus"),
+    weekHours: $("weekHours"), days: $("days"),
+    ovr: $("ovr"), monthHours: $("monthHours"), ovrBox: $("ovrBox"),
+    rate: $("rate")
+  };
+
+  var last = null;
+
+  function readInputs(){
+    var week = Math.max(0, toNum(els.weekHours.value));
+    var dailyH = week > 0 ? Math.min(8, week / 5) : 0;      // 1일 소정근로시간 (주 5일 기준, 8시간 한도)
+    var weeklyH = week + Math.min(8, week / 5);             // 주 소정 + 주휴
+    var autoMonth = week > 0 ? Math.round(weeklyH * WEEK_DAYS) : 0;
+
+    var monthH = autoMonth;
+    if (els.ovr.checked) {
+      monthH = toNum(els.monthHours.value);
+    }
+
+    var base = toNum(els.base.value);
+    var allow = toNum(els.allow.value);
+    var bonus = toNum(els.bonus.value);
+    var days = Math.max(0, toNum(els.days.value));
+
+    var monthWage = base + allow + bonus / 12;
+    var hourly = monthH > 0 ? monthWage / monthH : 0;
+    var daily = hourly * dailyH;
+    var total = daily * days;
+
+    return {
+      week: week, dailyH: dailyH, autoMonth: autoMonth, monthH: monthH,
+      base: base, allow: allow, bonus: bonus, days: days,
+      monthWage: monthWage, hourly: hourly, daily: daily, total: total
+    };
+  }
+
+  function renderTax(sum){
+    var r = toNum(els.rate.value);
+    var ded = sum.total * r / 100;
+    var net = sum.total - ded;
+    $("rNet").textContent = won(net);
+    if (r > 0) {
+      $("rDedLabel").textContent = "예상 공제 " + won(ded) + "원 (" + r + "%) · 실수령 참고";
+      $("rDed").textContent = "";
+    } else {
+      $("rDedLabel").textContent = "공제 없음 · 세전 금액";
+      $("rDed").textContent = "";
+    }
+  }
+
+  function render(){
+    var s = readInputs();
+    last = s;
+
+    // 고급 설정: 월 소정근로시간 필드 동기화
+    if (!els.ovr.checked) {
+      els.monthHours.value = s.autoMonth || "";
+    }
+
+    // 주 소정근로시간 안내
+    var hh = $("hoursHelp");
+    if (s.week > 0) {
+      hh.innerHTML = "1일 소정근로 <b>" + (Math.round(s.dailyH * 100) / 100) + "시간</b> · 월 소정근로 <b>" + s.monthH + "시간</b>으로 계산합니다.";
+    } else {
+      hh.textContent = "주 소정근로시간을 넣어 주세요.";
+    }
+
+    $("rTotal").textContent = won(s.total);
+    $("rHourly").textContent = won(s.hourly);
+    $("rDaily").textContent = won(s.daily);
+    $("rMonthHours").textContent = s.monthH ? won(s.monthH) : "-";
+    $("rcap").textContent = (Math.round(s.days * 100) / 100) + "일";
+
+    var before = "월 통상임금 " + money(s.monthWage);
+    if (s.bonus > 0) before += " (기본급 + 고정수당 + 상여금 월할 " + won(s.bonus / 12) + "원)";
+    $("rBefore").textContent = before;
+
+    // 공식
+    $("s1").textContent = money(s.monthWage);
+    $("s2").textContent = (s.week > 0 ? s.monthH + "시간" : "-");
+    $("s2").parentNode.firstChild.nodeValue = "월 소정근로시간 = (주 " + (s.week || 0) + "시간 + 주휴 " + (Math.round((s.week > 0 ? Math.min(8, s.week / 5) : 0) * 100) / 100) + "시간) × 365 ÷ 7 ÷ 12 = ";
+    $("s3").textContent = money(s.hourly);
+    $("s3").parentNode.firstChild.nodeValue = "통상시급 = " + won(s.monthWage) + " ÷ " + (s.monthH || 0) + " = ";
+    $("s4").textContent = money(s.daily);
+    $("s4").parentNode.firstChild.nodeValue = "1일 통상임금 = " + won(s.hourly) + " × " + (Math.round(s.dailyH * 100) / 100) + "시간 = ";
+    $("s5").textContent = money(s.total);
+    $("s5").parentNode.firstChild.nodeValue = "연차수당 = " + won(s.daily) + " × " + (Math.round(s.days * 100) / 100) + "일 = ";
+
+    renderTax(s);
+
+    // 경고
+    var w = $("warn"), msgs = [];
+    if (s.week > 0 && s.week < 15) msgs.push("주 소정근로시간이 15시간 미만이면 연차휴가 규정이 적용되지 않습니다. 계산 결과는 참고용이에요.");
+    if (s.days > 25) msgs.push("법정 연차는 가산을 포함해 최대 25일입니다. 25일을 넘는 일수는 회사 자체 규정(자율 연차 등)으로 확인해 보세요.");
+    if (s.monthWage <= 0) msgs.push("월 기본급을 넣으면 계산이 시작됩니다.");
+    if (msgs.length) { w.textContent = msgs.join(" "); w.hidden = false; }
+    else { w.hidden = true; w.textContent = ""; }
+  }
+
+  // 이벤트
+  ["base","allow","bonus"].forEach(function(k){
+    els[k].addEventListener("blur", function(){ fmtMoneyField(els[k]); render(); });
+  });
+  ["base","allow","bonus","weekHours","days","monthHours"].forEach(function(k){
+    els[k].addEventListener("input", render);
+  });
+  els.ovr.addEventListener("change", function(){
+    els.monthHours.disabled = !els.ovr.checked;
+    els.ovrBox.style.opacity = els.ovr.checked ? "1" : ".55";
+    if (!els.ovr.checked) els.monthHours.value = last ? last.autoMonth : "";
+    render();
+  });
+  els.rate.addEventListener("change", function(){ if (last) renderTax(last); });
+
+  $("calc").addEventListener("submit", function(e){
+    e.preventDefault();
+    ["base","allow","bonus"].forEach(function(k){ fmtMoneyField(els[k]); });
+    render();
+    $("res").scrollIntoView({behavior: "smooth", block: "center"});
+  });
+
+  // 복사
+  $("copyBtn").addEventListener("click", function(){
+    if (!last) return;
+    var s = last;
+    var txt = "연차수당 계산 결과 (세전)\n"
+      + "· 월 통상임금: " + money(s.monthWage) + "\n"
+      + "· 월 소정근로시간: " + s.monthH + "시간 / 1일 소정근로: " + (Math.round(s.dailyH*100)/100) + "시간\n"
+      + "· 통상시급: " + money(s.hourly) + "\n"
+      + "· 1일 통상임금: " + money(s.daily) + "\n"
+      + "· 남은 연차: " + (Math.round(s.days*100)/100) + "일\n"
+      + "· 예상 연차수당: " + money(s.total) + "\n"
+      + "https://link.gold-queen.com/leave/";
+    var btn = this;
+    var done = function(){
+      btn.classList.add("done");
+      btn.querySelector("span").textContent = "복사됐습니다";
+      setTimeout(function(){ btn.classList.remove("done"); btn.querySelector("span").textContent = "계산 결과 복사"; }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done, function(){ fallback(txt, done); });
+    } else { fallback(txt, done); }
+  });
+
+  function fallback(txt, done){
+    var ta = document.createElement("textarea");
+    ta.value = txt; ta.setAttribute("readonly","");
+    ta.style.position = "fixed"; ta.style.top = "-1000px";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); done(); } catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
